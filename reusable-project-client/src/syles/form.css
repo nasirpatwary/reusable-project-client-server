@@ -1,0 +1,26 @@
+@layer base {
+          [type='text'],
+          input:where(:not([type])),
+          [type='email'],
+          [type='url'],
+          [type='password'],
+          [type='number'],
+          [type='date'],
+          [type='datetime-local'],
+          [type='month'],
+          [type='search'],
+          [type='tel'],
+          [type='time'],
+          [type='week'],
+          [multiple],
+          textarea,
+          select,
+          input{
+            @apply border px-2 py-1 rounded-md border-gray-300 focus:border-indigo-400 focus:ring-1 focus:ring-indigo-400 outline-none
+          }
+          [type="checkbox"],
+          [type="radio"]
+          {
+            @apply border border-gray-300 rounded-full checked:bg-indigo-400 focus:border-indigo-400 focus:ring-1 hover:bg-indigo-400 focus:ring-indigo-400 text-indigo-400
+          }
+}

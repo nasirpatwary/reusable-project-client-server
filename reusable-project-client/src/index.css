@@ -1,0 +1,60 @@
+@import "tailwindcss";
+ @plugin "daisyui" {
+   themes: light;
+ }
+@import "./syles/form.css";
+
+html{
+  overflow-y: scroll;
+}
+body{
+  overflow-y: hidden;
+}
+.banner{
+  clip-path: polygon(29% 15%, 70% 15%, 97% 53%, 76% 89%, 22% 90%, 1% 53%);
+}
+
+.logo {
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.animate-gradient {
+  background-size: 300%;
+  -webkit-animation: animatedgradient 6s ease infinite alternate;
+  -moz-animation: animatedgradient 6s ease infinite alternate;
+  animation: animatedgradient 6s ease infinite alternate;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
