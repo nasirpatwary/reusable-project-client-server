@@ -10,12 +10,12 @@ const About = () => {
   return (
     <>
       About Page
-       {/* <div className="w-full flex flex-col justify-center items-center">
+       <div className="w-full flex flex-col justify-center items-center">
         <div className="h-[600vh] w-full bg-green-500"></div>
        <Motion4 />
        <Motion5 /> 
         <Motion9 />
-      </div>  */}
+      </div>
        <Motion6 />
        <Motion7 />
        <Motion8 />

@@ -1,11 +1,11 @@
-import { useAdmin } from "../../../providers/AdminProvider";
 import useAuth from "../../hooks/useAuth";
+import useGetStatus from "../../hooks/useGetStatus";
 import LoadingSpinner from "../../shard/LoadingSpinner";
 import ErrorPage from "../ErrorPage";
 import AdminChart from "./AdminChart";
 const DashboardAdmin = () => {
     const {user} = useAuth()
-  const {status, isError, isLoading} = useAdmin()
+  const [status, isError, isLoading] = useGetStatus()
   if (isLoading) return <LoadingSpinner />
   if (isError) return <ErrorPage />
   return (

@@ -8,14 +8,21 @@ const Motion10 = () => {
     exit: { opacity: 0, scale: 0.5 },
   };
   return (
-    <div className={`border size-[300px] mx-auto border-orange-500 flex flex-col items-center justify-center `}>
-      <AnimatePresence>
-      <motion.button layout onHoverStart={() => setVisible(!visible)} className="border cursor-pointer px-4 py-1">
-        Toggle
-      </motion.button>
+    <AnimatePresence>
+      <motion.div
+      layout
+        className={`border size-[300px] mx-auto border-orange-500 flex flex-col items-center justify-center ${!visible && "bg-indigo-500 delay-1000 duration-1000"}`}
+      >
+        <motion.button
+          layout
+          onHoverStart={() => setVisible(!visible)}
+          className="border cursor-pointer px-4 py-1"
+        >
+          Toggle
+        </motion.button>
         {visible && (
           <motion.div
-          key={"animated-box"}
+            key={"animated-box"}
             className="bg-indigo-500 size-44 rounded flex flex-wrap gap-4 p-4 justify-center items-center"
             variants={parent}
             initial="initial"
@@ -23,8 +30,8 @@ const Motion10 = () => {
             exit="exit"
           ></motion.div>
         )}
-      </AnimatePresence>
-    </div>
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

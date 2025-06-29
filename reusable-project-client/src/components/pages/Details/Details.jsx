@@ -39,10 +39,10 @@ const Details = ({
               modules={[Navigation, Autoplay]}
               autoplay={{
                 delay: 3000, // 3 seconds
-                disableOnInteraction: false, // user scroll korleo autoplay বন্ধ হবে না
+                disableOnInteraction: false,
               }}
               onSwiper={(swiper) => {
-                swiperRef.current = swiper; // রেফারেন্স ধরে রাখছি autoplay stop/start করার জন্য
+                swiperRef.current = swiper;
               }}
             >
               <SwiperSlide>
@@ -60,7 +60,7 @@ const Details = ({
             </Swiper>
           </div>
           {/* Image Description */}
-          <div className="absolute bottom-4 md:text-center w-full">
+          <div className="absolute bottom-4 z-20 md:text-center w-full">
             <p className="text-gray-700">
               Fresh and quality foods including vegetables, juicy fruits, fish,
               meat, crispy biscuits & snacks items, and delicious seafood — all

@@ -15,17 +15,14 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
-import { AdminProvider } from "./providers/AdminProvider";
 const queryClient = new QueryClient()
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <AuthProvider>
         <QueryClientProvider client={queryClient}>
-        <AdminProvider>
           <Router />
            <ReactQueryDevtools initialIsOpen={false} />
-        </AdminProvider>
         </QueryClientProvider>
       </AuthProvider>
     </BrowserRouter>

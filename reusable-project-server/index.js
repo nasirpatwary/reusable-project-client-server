@@ -19,7 +19,11 @@ const mg = mailgun.client({
 // Middleware to parse JSON body
 app.use(express.json());
 const corsOptions = {
-  origin: ["http://localhost:5173", "https://reusable-project.web.app", "https://reusable-project-server.vercel.app"],
+  origin: [
+    "http://localhost:5173",
+    "https://reusable-project.web.app",
+    "https://reusable-project-server.vercel.app",
+  ],
   credentials: true,
 };
 app.use(cors(corsOptions));
@@ -58,7 +62,7 @@ async function run() {
     };
     const verifiAdmin = async (req, res, next) => {
       const email = req.user?.email;
-      const query = { email };
+      const query = { email: email };
       const user = await userCollection.findOne(query);
       const admin = user?.status === "admin";
       if (!admin) return res.status(403).send({ message: "forbidden access" });
@@ -108,9 +112,10 @@ async function run() {
       });
       res.send(result);
     });
-    app.get("/users", async (req, res) => {
-      const cursor = req.body;
-      const result = await userCollection.find(cursor).toArray();
+    app.get("/users/:email", verifiToken, verifiAdmin, async (req, res) => {
+      const  email = req.params.email;
+      const query = { email: { $ne: email } };
+      const result = await userCollection.find(query).toArray();
       return res.send(result);
     });
     app.patch("/user-update/:id", async (req, res) => {
@@ -256,7 +261,7 @@ async function run() {
         res.send(result);
       }
     );
-    app.get("/admin-status", verifiToken, async (req, res) => {
+    app.get("/admin-status", verifiToken, verifiAdmin, async (req, res) => {
       const products = await productCollection.estimatedDocumentCount();
       const users = await userCollection.estimatedDocumentCount();
       const payments = await paymentCollection.estimatedDocumentCount();

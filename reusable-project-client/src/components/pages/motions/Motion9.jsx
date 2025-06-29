@@ -46,7 +46,7 @@ const Motion9 = () => {
   });
 
   return (
-    <div className="fixed right-0 bottom-0 z-50">
+    <div className="fixed right-0 bottom-20 z-50">
       <svg id="progress" width="80" height="80" viewBox="0 0 100 100">
         {/* Background Circle */}
         <circle

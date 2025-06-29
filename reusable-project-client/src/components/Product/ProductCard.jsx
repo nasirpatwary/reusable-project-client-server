@@ -9,7 +9,6 @@ const ProductCard = ({
   img,
   category,
   price,
-  oldPrice,
   _id,
   rating,
   tag,
@@ -125,7 +124,7 @@ const ProductCard = ({
             </div>
           </div>
           <div className={`${view === "list" ? "" : "hidden"}`}>
-            <button className="border py-1 px-3">Add Cart</button>
+            <button className="border transform duration-700 delay-300 text-indigo-500 hover:bg-indigo-500 hover:text-white border-indigo-500 py-1 cursor-pointer px-4 rounded font-semibold">Add Cart</button>
           </div>
         </div>
       </div>

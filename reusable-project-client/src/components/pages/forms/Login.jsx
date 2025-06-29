@@ -91,7 +91,7 @@ const Login = () => {
             {/* reCAPTCHA */}
             <div className="mt-8 md:mt-4">
               <ReCAPTCHA
-                sitekey={import.meta.env.VITE_RECAPTCHA_KEY}
+                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
                 onChange={(value) => setCaptcha(value)}
                 onExpired={() => setCaptcha(null)}
                 onErrored={() => setCaptcha(null)}

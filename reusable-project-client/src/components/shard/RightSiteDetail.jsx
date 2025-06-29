@@ -81,7 +81,7 @@ const RightSiteDetail = ({
           view={view}
         />
       </div>
-      <div className="md:w-2/3 space-y-4 border-r border-l md:border-l-0 md:border-t border-b border-indigo-500 rounded md:rounded-l-none">
+      <div className="md:w-2/3 space-y-6 border-r border-l md:border-l-0 md:border-t border-b border-indigo-500 rounded md:rounded-l-none">
         <p className="text-center text-xl border-b border-indigo-500 mt-2">
           Total Price:{" "}
           <span className="text-lg">{price * quantity}</span>
@@ -119,7 +119,7 @@ const RightSiteDetail = ({
           />
           <button
             onClick={() => handleAddCart(_id)}
-            className="border text-indigo-500 duration-500 hover:bg-indigo-500 hover:text-white border-indigo-500 py-1 cursor-pointer px-4 rounded font-semibold w-full mb-4 lg:mb-0"
+            className="border text-indigo-500 duration-500 hover:bg-indigo-500 hover:text-white border-indigo-500 py-1 cursor-pointer px-4 rounded font-semibold mb-4 w-full lg:mb-0"
           >
             Add Cart
           </button>

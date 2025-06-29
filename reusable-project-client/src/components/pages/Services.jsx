@@ -13,7 +13,6 @@ import Motion3 from "./motions/motion3";
 //   return () => clearInterval(interval); // ✅ clean up on unmount
 // }, []);
 const Services = () => {
- 
   return (
     <>
       {/* <div className="max-w-md mx-auto mt-10 p-6 bg-gray-900 text-white rounded-xl shadow-lg space-y-4">

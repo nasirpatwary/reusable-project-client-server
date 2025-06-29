@@ -29,23 +29,23 @@ export default function ProductPage({
             onClick={() => setView("grid3")}
             className={view === "grid3" ? "text-indigo-500" : "text-gray-400"}
           >
-            <Grid3X3 size={20} />
+            <Grid3X3 className="cursor-pointer" size={20} />
           </button>
           <button
             onClick={() => setView("grid2")}
             className={view === "grid2" ? "text-indigo-500" : "text-gray-400"}
           >
-            <Grid2X2 size={20} />
+            <Grid2X2 className="cursor-pointer" size={20} />
           </button>
           <button
             onClick={() => setView("list")}
             className={view === "list" ? "text-indigo-500" : "text-gray-400"}
           >
-            <List size={20} />
+            <List className="cursor-pointer" size={20} />
           </button>
         </div>
         <select
-          className="text-sm appearance-none text-indigo-900 bg-transparent outline-none"
+          className="text-sm cursor-pointer appearance-none text-indigo-900 bg-transparent outline-none"
           value={sortOption}
           onChange={(e) => setSortOption(e.target.value)}
         >
@@ -61,7 +61,7 @@ export default function ProductPage({
         <form onSubmit={(e) => e.preventDefault()}>
           <input
             value={search}
-            className="w-full"
+            className="w-full cursor-pointer"
             placeholder="Search..."
             type="search"
             name="search"

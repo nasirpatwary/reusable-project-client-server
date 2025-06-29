@@ -40,18 +40,6 @@ const DashboardRoute = () => {
       ) : (
         <>
           <NavLink
-            to="/dashboard/users"
-            className={({ isActive }) =>
-              `flex items-center gap-2 ${
-                isActive
-                  ? "border-b transform duration-700 animate__animated animate__fadeInLeft border-indigo-300"
-                  : ""
-              }`
-            }
-          >
-            <FaUsers /> All User
-          </NavLink>
-          <NavLink
             to="/dashboard/userHome"
             className={({ isActive }) =>
               `block ${
@@ -77,18 +65,30 @@ const DashboardRoute = () => {
           </NavLink>
         </>
       )}
-          <NavLink
-            to="/dashboard/orders"
-            className={({ isActive }) =>
-              `block ${
-                isActive
-                  ? "border-b transform duration-700 animate__animated animate__fadeInLeft border-indigo-300"
-                  : ""
-              }`
-            }
-          >
-            🧾 Orders <span className="text-indigo-500">({carts.length})</span>
-          </NavLink>
+      <NavLink
+        to="/dashboard/users"
+        className={({ isActive }) =>
+          `flex items-center gap-2 ${
+            isActive
+              ? "border-b transform duration-700 animate__animated animate__fadeInLeft border-indigo-300"
+              : ""
+          }`
+        }
+      >
+        <FaUsers /> All User
+      </NavLink>
+      <NavLink
+        to="/dashboard/orders"
+        className={({ isActive }) =>
+          `block ${
+            isActive
+              ? "border-b transform duration-700 animate__animated animate__fadeInLeft border-indigo-300"
+              : ""
+          }`
+        }
+      >
+        🧾 Orders <span className="text-indigo-500">({carts.length})</span>
+      </NavLink>
       <NavLink
         to="/"
         className={({ isActive }) =>
