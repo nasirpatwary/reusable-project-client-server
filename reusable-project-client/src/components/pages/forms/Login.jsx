@@ -52,7 +52,7 @@ const Login = () => {
     successToast("forgot password successfully ✅")
   }
   return (
-    <div className="flex p-4 flex-col justify-center min-h-[calc(100vh-208px)]">
+    <div className="flex p-4 flex-col justify-center min-h-[calc(100vh)]">
       <h2 className="text-center text-2xl my-4">Login Now</h2>
 
       <FormProvider {...methods}>
