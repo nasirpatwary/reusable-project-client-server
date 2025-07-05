@@ -17,7 +17,6 @@ const mg = mailgun.client({
 });
 
 // Middleware to parse JSON body
-app.use(express.json());
 const corsOptions = {
   origin: [
     "http://localhost:5173",

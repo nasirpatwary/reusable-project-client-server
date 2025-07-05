@@ -17,49 +17,49 @@ const categoryLabels = [
   {
     id: 1,
     name: "Vegetables",
-    categroy: "vegetables",
+    category: "vegetables",
     image: vegetabl,
   },
   {
     id: 2,
     name: "Fresh Fruits",
-    categroy: "fresh fruits",
+    category: "fresh fruits",
     image: fruit,
   },
   {
     id: 3,
     name: "Fresh Drinks",
-    categroy: "fresh drink",
+    category: "fresh drink",
     image: drink,
   },
   {
     id: 4,
     name: "Fresh Milk",
-    categroy: "fresh milk",
+    category: "fresh milk",
     image: milk,
   },
   {
     id: 5,
     name: "Fresh Meat",
-    categroy: "fresh meat",
+    category: "fresh meat",
     image: meat,
   },
   {
     id: 6,
     name: "Biscuits Snack",
-    categroy: "biscuits snack",
+    category: "biscuits snack",
     image: snack,
   },
   {
     id: 7,
     name: "Fresh Bakery",
-    categroy: "fresh bakery",
+    category: "fresh bakery",
     image: bakery,
   },
   {
     id: 8,
     name: "Sea Foods",
-    categroy: "sea foods",
+    category: "sea foods",
     image: food,
   },
 ];
@@ -95,13 +95,13 @@ const CategoryItem = () => {
         }}
       >
         {categoryLabels.map((cat) => {
-          const isActive = category === cat.categroy;
+          const isActive = category === cat.category;
           return (
             <SwiperSlide key={cat.id}>
               <CategoryButton
                 image={cat.image}
                 name={cat.name}
-                label={cat.categroy}
+                label={cat.category}
                 activeCategory={category}
                 onClick={setCategory}
                 isActive={isActive}
