@@ -117,10 +117,10 @@ async function run() {
       const result = await userCollection.find(query).toArray();
       return res.send(result);
     });
-    app.patch("/user-update/:id", async (req, res) => {
+    app.patch("/user-update/:email", async (req, res) => {
       const { status } = req.body;
-      const { id } = req.params;
-      const filter = { _id: new ObjectId(id) };
+      const { email } = req.params;
+      const filter = { email };
       const updateDoc = {
         $set: { status },
       };
