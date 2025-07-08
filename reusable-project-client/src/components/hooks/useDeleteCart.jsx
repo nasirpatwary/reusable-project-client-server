@@ -7,8 +7,7 @@ const useDeleteCart = () => {
   const axiosPublic = useAxiosPublic();
   const { isPending, mutateAsync } = useMutation({
     mutationFn: async (id) => {
-      const { data } = await axiosPublic.delete(`/delete-cart/${id}`);
-      return data;
+      await axiosPublic.delete(`/delete-cart/${id}`);
     },
     onSuccess: () => {
       toast.success("Cart item deleted successfully!");

@@ -1,12 +1,19 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import useAxiosPublic from "./useAxiosPublic";
+import { successToast, warningToast } from "../shard/Toastify";
 const usePostCart = () => {
   const queryClient = useQueryClient();
   const axiosPublic = useAxiosPublic();
-  const { isSuccess, isError, mutateAsync } = useMutation({
+  const { mutateAsync } = useMutation({
     mutationFn: async (newTodo) => await axiosPublic.post(`/cart`, newTodo),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["cart"] }),
+    onSuccess: () => {
+      successToast("Post Successfully!");
+      queryClient.invalidateQueries({ queryKey: ["cart"] });
+    },
+    onError: (error) => {
+      warningToast(error.message);
+    },
   });
-  return [isError, isSuccess, mutateAsync];
+  return [mutateAsync];
 };
 export default usePostCart;

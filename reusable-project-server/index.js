@@ -111,16 +111,16 @@ async function run() {
       });
       res.send(result);
     });
-    app.get("/users/:email", verifiToken, verifiAdmin, async (req, res) => {
+    app.get("/users/:email", verifiToken, async (req, res) => {
       const  email = req.params.email;
       const query = { email: { $ne: email } };
       const result = await userCollection.find(query).toArray();
       return res.send(result);
     });
-    app.patch("/user-update/:email", async (req, res) => {
+    app.patch("/user-update/:id", async (req, res) => {
+      const { id } = req.params;
       const { status } = req.body;
-      const { email } = req.params;
-      const filter = { email };
+      const filter = { _id: new ObjectId(id) };
       const updateDoc = {
         $set: { status },
       };

@@ -2,7 +2,9 @@ import { useForm } from "react-hook-form";
 import { FormInput } from "../../ReusableForms";
 import clsx from "clsx";
 import usePatchUser from "../../hooks/usePatchUser";
-const TableUser = ({ email, name, image, status, _id }) => {
+import useAuth from "../../hooks/useAuth";
+const TableUser = ({ email, name, image, status, _id}) => {
+  const {user} = useAuth()
   const [mutateAsync] = usePatchUser()
   const {
     register,

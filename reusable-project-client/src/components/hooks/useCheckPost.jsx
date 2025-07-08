@@ -7,8 +7,7 @@ const useCheckPost = () => {
     const axiosSecure = useAxiosSecure()
     const {mutateAsync} = useMutation({
         mutationFn: async (payment) => {
-            const {data} = await axiosSecure.post("/payment", payment) 
-            return data
+        await axiosSecure.post("/payment", payment) 
         },
         onSuccess: () =>{
             toast.success("payment successfully!")

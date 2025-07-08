@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 import { Form, FormInput, FormSection, FormSubmit } from "../../ReusableForms";
-import { successToast, warningToast } from "../../shard/Toastify";
+import { warningToast } from "../../shard/Toastify";
 import { imageUpload } from "../../../api/utils/utils";
 import usePostMenu from "../../hooks/usePostMenu";
 const ProductForm = () => {
-  const [isError, isSuccess, mutateAsync] = usePostMenu();
+  const [mutateAsync] = usePostMenu();
   const {
     register,
     handleSubmit,
@@ -31,8 +31,6 @@ const ProductForm = () => {
         category: data.category,
       };
       await mutateAsync(products);
-      if (isSuccess) return successToast(`${data.name} add successfully`);
-      if (isError) return warningToast(isError.message);
     } catch (error) {
       warningToast(error.message);
     }
@@ -75,21 +73,21 @@ const ProductForm = () => {
           />
           <div className="flex flex-col md:flex-row gap-4">
             <FormInput
-            id="price"
-            name="price"
-            label="Price"
-            type="number"
-            placeholder="Selec Price"
-            register={register("price")}
-          />
+              id="price"
+              name="price"
+              label="Price"
+              type="number"
+              placeholder="Selec Price"
+              register={register("price")}
+            />
             <FormInput
-            id="rating"
-            name="rating"
-            label="Rating"
-            type="number"
-            placeholder="Selec rating"
-            register={register("rating")}
-          />
+              id="rating"
+              name="rating"
+              label="Rating"
+              type="number"
+              placeholder="Selec rating"
+              register={register("rating")}
+            />
           </div>
           <FormInput
             label="Category"

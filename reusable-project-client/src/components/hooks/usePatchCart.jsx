@@ -8,8 +8,7 @@ const usePatchCart = () => {
   const { mutateAsync, isPending } = useMutation({
     mutationFn: async (updateData) => {
       const { id, ...body } = updateData;
-      const { data } = await axiosPublic.patch(`/patch-cart/${id}`, body);
-      return data;
+      await axiosPublic.patch(`/patch-cart/${id}`, body);
     },
     onSuccess: () => {
       toast.success("Cart item updated successfully!");

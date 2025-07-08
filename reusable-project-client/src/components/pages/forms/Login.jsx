@@ -69,7 +69,7 @@ const Login = () => {
             />
 
             {/* Password + Eye toggle */}
-            <diev className="w-full max-w-md relative">
+            <div className="w-full max-w-md relative">
               <Input
                 id="password"
                 name="password"
